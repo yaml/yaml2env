@@ -22,13 +22,13 @@ Add to your @Gemfile@:
 
 h2. Usage
 
-To give this some context; this is how we use @Yaml2Env@ to initialize "Hoptoad":http://hoptoadapp.com:
+To give this some context; this is how we use @Yaml2env@ to initialize "Hoptoad":http://hoptoadapp.com:
 
 <pre>
-  Yaml2Env.load! 'config/hoptoad.yml', {'HOPTOAD_API_KEY' => 'api_key'}
+  Yaml2env.load! 'config/hoptoad.yml', {'HOPTOAD_API_KEY' => 'api_key'}
 
   # ...or if a warning note in the logs is enough:
-  #   Yaml2Env.load 'config/hoptoad.yml', {'HOPTOAD_API_KEY' => 'api_key'}
+  #   Yaml2env.load 'config/hoptoad.yml', {'HOPTOAD_API_KEY' => 'api_key'}
 
   if defined?(HoptoadNotifier)
     HoptoadNotifier.configure do |config|
@@ -77,13 +77,13 @@ h2. Helpers
 A few convenient helpers:
 
 <pre>
-  Yaml2Env.loaded? 'HOPTOAD_API_KEY'
+  Yaml2env.loaded? 'HOPTOAD_API_KEY'
   => true
 
-  Yaml2Env.loaded? 'BAZOOKA'
+  Yaml2env.loaded? 'BAZOOKA'
   => false
 
-  Yaml2Env.loaded? 'HOPTOAD_API_KEY', 'BAZOOKA'
+  Yaml2env.loaded? 'HOPTOAD_API_KEY', 'BAZOOKA'
   => false
 </pre>
 
